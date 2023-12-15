@@ -13,15 +13,17 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-left: 10px;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: linear-gradient(-30deg, rgb(253, 253, 253) 0%, rgba(48,195,236,1) 100%);
+  
 }
 
 .App-link {
@@ -36,3 +38,140 @@
     transform: rotate(360deg);
   }
 }
+
+
+button {
+  background-color: #30c3ec;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px  #1ba0d7;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
+}
+
+button:not(:hover) {
+  transform: scale(1);
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
+
+}
+
+button:active {
+  transform: scale(1);
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+
+}
+
+ul {
+  list-style-type: none;
+  padding: fit-content;
+  margin: fit-content;
+  background-color: #1b9fd789;
+  border-radius: 10px; 
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+
+li {
+  width: calc(fit-content + 20px);
+  list-style-type: none;
+  list-style-image: url('svgs/file.svg');
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: left center;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.1); 
+  transform: translateX(10px);
+  border-radius: 10px;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;  
+}
+
+li:not(:hover) {
+  transform: scale(1);
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+}
+
+li.doc, li.docx, li.pdf, li.txt {
+  list-style-image: url('svgs/file-text.svg');
+}
+
+li.jpg, li.jpeg, li.png, li.gif {
+  list-style-image: url('svgs/image.svg');
+}
+
+li.mp3, li.wav, li.ogg, li.m4a {
+  list-style-image: url('svgs/music.svg');
+}
+
+li.mp4, li.mov, li.avi, li.wmv {
+  list-style-image: url('svgs/video.svg');
+}
+
+li.zip, li.rar, li.tar, li.gz {
+  list-style-image: url('svgs/archive.svg');
+}
+
+
+.illustration {
+  align-items: center;
+  display: flex;
+  align-self: left; 
+  height: auto;
+}
+
+.illustration-img {
+  width: 300px;
+}
+
+p {
+  max-width: 300px;
+}
+
+input[type=file]::file-selector-button{
+  background: white;
+  border-radius: 10px;
+  color: #1ba0d7;
+  font-size: 16px;
+  border:none;
+  cursor: pointer;
+  viewport-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
