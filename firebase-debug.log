@@ -1,0 +1,206 @@
+[debug] [2023-12-15T20:11:54.625Z] ----------------------------------------------------------------------
+[debug] [2023-12-15T20:11:54.626Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting:github
+[debug] [2023-12-15T20:11:54.626Z] CLI Version:   12.5.4
+[debug] [2023-12-15T20:11:54.627Z] Platform:      win32
+[debug] [2023-12-15T20:11:54.627Z] Node Version:  v18.18.0
+[debug] [2023-12-15T20:11:54.627Z] Time:          Fri Dec 15 2023 22:11:54 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-15T20:11:54.627Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-15T20:11:54.682Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-15T20:11:54.682Z] > authorizing via signed-in user (filipposfivos@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Philip\Desktop\React\unidrive
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-15T20:12:31.488Z] Using project from CLI flag: unidrive-f8149
+[debug] [2023-12-15T20:12:31.489Z] > refreshing access token with scopes: []
+[debug] [2023-12-15T20:12:31.490Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-15T20:12:31.491Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-15T20:12:52.579Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------988246276701145897760542","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2a00:1450:4001:830::200a:443
+[debug] [2023-12-15T20:12:52.580Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-12-15T20:12:52.779Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:144:12)
+    at refreshTokens (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:508:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.getAccessToken (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:149:22)
+    at async Client.addAuthHeader (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:140:21)
+    at async Client.request (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:34)
+    at async getFirebaseProject (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:295:21)
+    at async doSetup (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:85:27)
+    at async init (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:41:9)
+[error] 
+[error] Error: Failed to get Firebase project unidrive-f8149. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-12-15T20:13:08.300Z] ----------------------------------------------------------------------
+[debug] [2023-12-15T20:13:08.302Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting:github
+[debug] [2023-12-15T20:13:08.302Z] CLI Version:   12.5.4
+[debug] [2023-12-15T20:13:08.302Z] Platform:      win32
+[debug] [2023-12-15T20:13:08.302Z] Node Version:  v18.18.0
+[debug] [2023-12-15T20:13:08.303Z] Time:          Fri Dec 15 2023 22:13:08 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-15T20:13:08.303Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-15T20:13:08.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-15T20:13:08.357Z] > authorizing via signed-in user (filipposfivos@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Philip\Desktop\React\unidrive
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-15T20:13:10.044Z] Using project from CLI flag: unidrive-f8149
+[debug] [2023-12-15T20:13:10.045Z] > refreshing access token with scopes: []
+[debug] [2023-12-15T20:13:10.046Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-15T20:13:10.046Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-15T20:13:10.305Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-15T20:13:10.305Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-15T20:13:10.311Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 [none]
+[debug] [2023-12-15T20:13:10.711Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 200
+[debug] [2023-12-15T20:13:10.711Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 {"projectId":"unidrive-f8149","projectNumber":"630180175743","displayName":"UniDrive","name":"projects/unidrive-f8149","resources":{"hostingSite":"unidrive-f8149","realtimeDatabaseInstance":"unidrive-f8149-default-rtdb","storageBucket":"unidrive-f8149.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6a85b8a5-5fec-4422-b1a9-e850e916dfd1"}
+[info] i  Using project unidrive-f8149 (UniDrive) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at C:\Users\Philip\Desktop\React\unidrive 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=1068935291&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-12-15T20:13:11.357Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-12-15T20:13:11.357Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-12-15T20:13:11.732Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-12-15T20:13:11.732Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-12-15T20:13:11.737Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-12-15T20:13:12.176Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-12-15T20:13:12.177Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"philipAthanasopoulos","id":80889555,"node_id":"MDQ6VXNlcjgwODg5NTU1","avatar_url":"https://avatars.githubusercontent.com/u/80889555?v=4","gravatar_id":"","url":"https://api.github.com/users/philipAthanasopoulos","html_url":"https://github.com/philipAthanasopoulos","followers_url":"https://api.github.com/users/philipAthanasopoulos/followers","following_url":"https://api.github.com/users/philipAthanasopoulos/following{/other_user}","gists_url":"https://api.github.com/users/philipAthanasopoulos/gists{/gist_id}","starred_url":"https://api.github.com/users/philipAthanasopoulos/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/philipAthanasopoulos/subscriptions","organizations_url":"https://api.github.com/users/philipAthanasopoulos/orgs","repos_url":"https://api.github.com/users/philipAthanasopoulos/repos","events_url":"https://api.github.com/users/philipAthanasopoulos/events{/privacy}","received_events_url":"https://api.github.com/users/philipAthanasopoulos/received_events","type":"User","site_admin":false,"name":"Philip","company":null,"blog":"","location":"Ioannina, Greece","email":null,"hireable":true,"bio":null,"twitter_username":null,"public_repos":15,"public_gists":0,"followers":8,"following":11,"created_at":"2021-03-18T10:04:38Z","updated_at":"2023-12-08T01:31:12Z","private_gists":0,"total_private_repos":17,"owned_private_repos":17,"disk_usage":367227,"collaborators":3,"two_factor_authentication":false,"plan":{"name":"pro","space":976562499,"collaborators":0,"private_repos":9999}}
+[info] 
+[info] +  Success! Logged into GitHub as philipAthanasopoulos 
+[info] 
+[debug] [2023-12-15T20:13:55.561Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopoulos/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:13:55.570Z] >>> [apiv2][query] GET https://api.github.com/repos///actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:13:55.895Z] <<< [apiv2][status] GET https://api.github.com/repos///actions/secrets/public-key 404
+[debug] [2023-12-15T20:13:55.896Z] <<< [apiv2][body] GET https://api.github.com/repos///actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:13:55.908Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopoulos/actions/secrets/public-key 404
+[debug] [2023-12-15T20:13:55.908Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopoulos/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:14:25.509Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:14:25.837Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:14:25.837Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:14:35.793Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:14:36.113Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:14:36.113Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:15:05.776Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:15:06.036Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:15:06.204Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:15:06.204Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:15:06.240Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:15:06.346Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2023-12-15T20:15:06.346Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:15:06.580Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:15:06.580Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:15:07.244Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:15:07.578Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:15:07.578Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-12-15T20:15:14.063Z] >>> [apiv2][query] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key type=owner
+[debug] [2023-12-15T20:15:14.361Z] <<< [apiv2][status] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key 404
+[debug] [2023-12-15T20:15:14.361Z] <<< [apiv2][body] GET https://api.github.com/repos/philipAthanasopulos/school-drive/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
