@@ -137,7 +137,6 @@ function App() {
           <section className='fileList'>
             {user ? <UploadFile /> : null}
             {user ? <ListAllFilesInStorage /> : null}
-            {/* {user ? <DeleteAllFilesInStorage/> : null}  */}
           </section>
         </div>
     </div>
