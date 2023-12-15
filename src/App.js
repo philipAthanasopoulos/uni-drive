@@ -11,7 +11,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAMBzF0J3Z0Hbm_UgZqJHw7EX7cypaRdWU",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "unidrive-f8149.firebaseapp.com",
   databaseURL: "https://unidrive-f8149-default-rtdb.firebaseio.com",
   projectId: "unidrive-f8149",
