@@ -10,7 +10,6 @@ import {useState, useEffect} from 'react';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyAMBzF0J3Z0Hbm_UgZqJHw7EX7cypaRdWU",
   authDomain: "unidrive-f8149.firebaseapp.com",
@@ -22,27 +21,21 @@ const firebaseConfig = {
   measurementId: "G-2Q5RKJV1FC"
 }
 
-
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const storage = firebase.storage();
 
-// FUNCTIONS //
-
-
 function SignIn() {
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
-
   return(
     <button onClick={signInWithGoogle}>Sign in with Google</button>
   )
 }
-
 
 function SignOut() {
   return auth.currentUser && (
@@ -61,7 +54,6 @@ function deleteAllFilesInStorage() {
   }).catch((error) => {
     console.log(error);
   });
-
 }
 
 function DeleteAllFilesInStorage() {
@@ -73,14 +65,10 @@ function DeleteAllFilesInStorage() {
   );
 }
 
-
-
 function ListAllFilesInStorage() {
   const [fileNames, setFileNames] = useState([]);
-
   useEffect(() => {
     const storageRef = firebase.storage().ref('myFile');
-
     storageRef.listAll().then((result) => {
       const promises = result.items.map((item) => item.getDownloadURL().then((url) => ({ url, name: item.name })));
       return Promise.all(promises);
@@ -132,10 +120,6 @@ function UploadFile() {
     </div>
   );
 }
-
-
-
-
 
 function App() {
   const [user] = useAuthState(auth);
