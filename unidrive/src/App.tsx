@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className=" flex">
-          <UploadsList />
+        <div className="flex space-x-10">
           <UploadSection />
+          <UploadsList />
         </div>
       </header>
     </div>

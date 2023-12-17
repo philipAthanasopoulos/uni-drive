@@ -2,6 +2,7 @@ import React from 'react';
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { useState } from 'react';
+import { upload } from '@testing-library/user-event/dist/upload';
 
 
 export const UploadSection: React.FC = () => {
@@ -17,34 +18,42 @@ export const UploadSection: React.FC = () => {
   }
 
   const app = initializeApp(firebaseConfig);
+  console.log(app);
   const storage = getStorage(app);
-  const storegeRef = ref(storage, '');
+  const storegeRef = ref(storage, 'files/');
 
   const [file, setFile] = useState<File | null>(null);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.length) {
-      setFile(e.target.files[0]);
+  const HandleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if(files){
+      setFile(files[0]);
     }
-  };
+    alert("File selected");
+  }
 
   const UploadFile = () => {
-    uploadBytes(storegeRef, file!).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-    });
+    if(file){
+      uploadBytes(storegeRef, file).then((snapshot) => {
+        console.log('Uploaded a blob or file!');
+      });
+    }
   }
 
  return (
-  <div className="flex items-center justify-center h-screen bg-gray-100">
-    <form className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+  <div className="flex items-center h-screen bg-gray-100">
+    <form className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
       <div className="flex flex-col">
         <label className="font-bold mb-2 text-gray-700" htmlFor="file">
           File:
         </label>
-        <input className="border border-gray-300 p-2 rounded-lg" type="file" id="file" name="file" onChange={handleFileChange}/>
+        <input className="border border-gray-300 p-2 rounded-lg cursor-pointer" type="file" id="file" name="file" onChange={HandleFileChange}/>
       </div>
+
       <div className="flex justify-center">
-        <input className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-400" type="submit" value="Submit" onSubmit={UploadFile} />
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" onClick={UploadFile}>
+          Upload
+        </button>
       </div>
     </form>
   </div>

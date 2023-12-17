@@ -36,8 +36,5 @@ export const UploadsList: React.FC = () => {
             <li key={index}>{name}</li>
             ))}
         </ul>
-        );
-    
-
-   
+    );
 }
