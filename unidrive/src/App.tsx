@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="flex space-x-10">
+        <div className="flex space-x-10 bg-white">
           <UploadSection />
           <UploadsList />
         </div>
