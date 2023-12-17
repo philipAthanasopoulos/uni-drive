@@ -44,7 +44,7 @@ function SignOut() {
 } 
 
 function deleteAllFilesInStorage() {
-  const storageRef = firebase.storage().ref('myFile');
+  const storageRef = firebase.storage().ref('');
 
   storageRef.listAll().then((result) => {
     const promises = result.items.map((item) => item.delete());
@@ -68,7 +68,7 @@ function DeleteAllFilesInStorage() {
 function ListAllFilesInStorage() {
   const [fileNames, setFileNames] = useState([]);
   useEffect(() => {
-    const storageRef = firebase.storage().ref('myFile');
+    const storageRef = firebase.storage().ref('files');
     storageRef.listAll().then((result) => {
       const promises = result.items.map((item) => item.getDownloadURL().then((url) => ({ url, name: item.name })));
       return Promise.all(promises);
@@ -108,8 +108,10 @@ function UploadFile() {
   };
 
   const handleUpload = () => {
-    const storageRef = firebase.storage().ref(`myFile/${file.name}`);
-    const uploadTask = storageRef.put(file);
+    const storageRef = firebase.storage().ref(`files/${file.name}`);
+    const uploadTask = storageRef.put(file).then((snapshot) => {
+      window.location.reload();
+    });
   };
 
   return (
