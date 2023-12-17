@@ -1,0 +1,35 @@
+[debug] [2023-12-17T14:45:32.992Z] ----------------------------------------------------------------------
+[debug] [2023-12-17T14:45:32.993Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-17T14:45:32.994Z] CLI Version:   12.5.4
+[debug] [2023-12-17T14:45:32.994Z] Platform:      win32
+[debug] [2023-12-17T14:45:32.994Z] Node Version:  v18.18.0
+[debug] [2023-12-17T14:45:32.995Z] Time:          Sun Dec 17 2023 16:45:32 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-17T14:45:32.995Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-17T14:45:33.046Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-17T14:45:33.046Z] > authorizing via signed-in user (filipposfivos@gmail.com)
+[debug] [2023-12-17T14:45:33.046Z] [iam] checking project unidrive-f8149 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-12-17T14:45:33.048Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/unidrive-f8149:testIamPermissions [none]
+[debug] [2023-12-17T14:45:33.048Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/unidrive-f8149:testIamPermissions x-goog-quota-user=projects/unidrive-f8149
+[debug] [2023-12-17T14:45:33.048Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/unidrive-f8149:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-17T14:45:33.946Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/unidrive-f8149:testIamPermissions 200
+[debug] [2023-12-17T14:45:33.946Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/unidrive-f8149:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-17T14:45:33.947Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 [none]
+[debug] [2023-12-17T14:45:34.329Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 200
+[debug] [2023-12-17T14:45:34.329Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/unidrive-f8149 {"projectId":"unidrive-f8149","projectNumber":"630180175743","displayName":"UniDrive","name":"projects/unidrive-f8149","resources":{"hostingSite":"unidrive-f8149","realtimeDatabaseInstance":"unidrive-f8149-default-rtdb","storageBucket":"unidrive-f8149.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6a85b8a5-5fec-4422-b1a9-e850e916dfd1"}
+[debug] [2023-12-17T14:45:34.330Z] Specified "public" directory "build" does not exist; Deploy to Hosting site "unidrive-f8149" may fail or be empty.
+[info] 
+[info] === Deploying to 'unidrive-f8149'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-12-17T14:45:34.335Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/unidrive-f8149/versions [none]
+[debug] [2023-12-17T14:45:34.335Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/unidrive-f8149/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-12-17T14:45:35.644Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/unidrive-f8149/versions 200
+[debug] [2023-12-17T14:45:35.644Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/unidrive-f8149/versions {"name":"projects/630180175743/sites/unidrive-f8149/versions/adcb884c5abe166a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[unidrive-f8149]: beginning deploy... 
+[debug] [2023-12-17T14:45:40.664Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Philip\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
