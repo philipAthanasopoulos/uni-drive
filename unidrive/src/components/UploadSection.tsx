@@ -45,28 +45,22 @@ export const UploadSection: React.FC = () => {
   }
 
  return (
-   <div className="flex">
+  <div>
     {error && (
-      <div className="" role="alert">
-        <p className="font-bold">Be Warned</p>
-        <p>Something not ideal might be happening.</p>
+      <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+        <p className="font-bold">No file selected</p>
+        <p>Please select a file to upload 📂</p>
       </div>
     )}
     <form className="">
       <div className="flex flex-col">
-        <label className="" htmlFor="file">
-          File:
-        </label>
-        <input className="" type="file" id="file" name="file" onChange={HandleFileChange}/>
-      </div>
-
-      <div className="flex justify-center">
+        <input className="text-black" type="file" id="file" name="file" onChange={HandleFileChange}/>
       </div>
     </form>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded" type="submit" onClick={UploadFile}>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded" type="submit" onClick={UploadFile}>
         Upload
       </button>
-    </div>
+  </div>
  );
 }
 

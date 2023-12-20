@@ -41,9 +41,9 @@ export const UploadsList: React.FC = () => {
     }, []);
 
     return (
-        <ul>
+        <ul className='bg-white rounded-lg'>
             {fileNames.map((file, index) => (
-                <li className="text-black hover:" key={index}>
+                <li className="text-black hover:bg-gray-200 rounded-lg" key={index}>
                     <a href={file.url} target = "_blank" download={file.name}>
                         {file.name}
                     </a>
