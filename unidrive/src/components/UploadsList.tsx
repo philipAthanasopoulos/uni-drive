@@ -36,19 +36,45 @@ export const UploadsList: React.FC = () => {
         setFileNames(files);
     };
 
+    const getFileIcon = (fileName: string) => {
+    const ext = fileName.split('.')[1];
+    const icon: { [key: string]: string } = {
+            pdf: '',
+            doc: '📄',
+            docx: '📄',
+            xls: '📄',
+            xlsx: '📄',
+            ppt: '📄',
+            pptx: '📄',
+            jpg: '📷',
+            jpeg: '📷',
+            png: '📷',
+            gif: '📷',
+            svg: '📷',
+            mp4: '🎥',
+            mov: '🎥',
+            mp3: '🎵',
+            wav: '🎵',
+        };
+        return icon[ext] ? icon[ext] : '📄';
+    }
+
     React.useEffect(() => {
         getFileNames();
     }, []);
 
     return (
-        <ul className='bg-white rounded-lg'>
-            {fileNames.map((file, index) => (
-                <li className="text-black hover:bg-gray-200 rounded-lg" key={index}>
-                    <a href={file.url} target = "_blank" download={file.name}>
-                        {file.name}
-                    </a>
-                </li>
-            ))}
-        </ul>
+        <div className=''>
+            <h1 className='text-2xl font-bold'>Files</h1>
+            <ul className='bg-white rounded-lg'>
+                {fileNames.map((file, index) => (
+                    <li className="text-black hover:bg-gray-200 rounded-lg text-left" key={index}>
+                        <a href={file.url} target = "_blank" download={file.name}>
+                            {getFileIcon(file.name)}{file.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }

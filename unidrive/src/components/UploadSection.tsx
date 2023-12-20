@@ -45,13 +45,14 @@ export const UploadSection: React.FC = () => {
   }
 
  return (
-  <div>
+  <div className=''>
     {error && (
-      <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+      <div className="bg-red-100/75 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
         <p className="font-bold">No file selected</p>
         <p>Please select a file to upload 📂</p>
       </div>
     )}
+    <br/>
     <form className="">
       <div className="flex flex-col">
         <input className="text-black" type="file" id="file" name="file" onChange={HandleFileChange}/>
