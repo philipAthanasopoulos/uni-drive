@@ -1,9 +1,14 @@
 import React from 'react';
 import { initializeApp } from "firebase/app";
-import { getStorage, listAll, ref } from "firebase/storage";
+import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 
 export const UploadsList: React.FC = () => {
-    const [fileNames, setFileNames] = React.useState<string[]>([]);
+    type File = {
+        name: string;
+        url: string;
+    };
+
+    const [fileNames, setFileNames] = React.useState<File[]>([]);
 
     const firebaseConfig = {
       apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -22,8 +27,13 @@ export const UploadsList: React.FC = () => {
 
     const getFileNames = async () => {
         const res = await listAll(storageRef);
-        const names = res.items.map(item => item.name);
-        setFileNames(names);
+        const files = await Promise.all(
+            res.items.map(async item => {
+                const url = await getDownloadURL(item);
+                return { name: item.name, url };
+            })
+        );
+        setFileNames(files);
     };
 
     React.useEffect(() => {
@@ -32,8 +42,12 @@ export const UploadsList: React.FC = () => {
 
     return (
         <ul>
-            {fileNames.map((name, index) => (
-            <li key={index}>{name}</li>
+            {fileNames.map((file, index) => (
+                <li className="text-black hover:" key={index}>
+                    <a href={file.url} target = "_blank" download={file.name}>
+                        {file.name}
+                    </a>
+                </li>
             ))}
         </ul>
     );
