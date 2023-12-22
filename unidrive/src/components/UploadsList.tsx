@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 
@@ -7,24 +7,26 @@ export const UploadsList: React.FC = () => {
         name: string;
         url: string;
     };
-
-    const [fileNames, setFileNames] = React.useState<File[]>([]);
-
+    
+    
     const firebaseConfig = {
-      apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-      authDomain: "unidrive-f8149.firebaseapp.com",
-      databaseURL: "https://unidrive-f8149-default-rtdb.firebaseio.com",
-      projectId: "unidrive-f8149",
-      storageBucket: "unidrive-f8149.appspot.com",
-      messagingSenderId: "630180175743",
-      appId: "1:630180175743:web:6a39ea24129107690b444a",
-      measurementId: "G-2Q5RKJV1FC"
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+        authDomain: "unidrive-f8149.firebaseapp.com",
+        databaseURL: "https://unidrive-f8149-default-rtdb.firebaseio.com",
+        projectId: "unidrive-f8149",
+        storageBucket: "unidrive-f8149.appspot.com",
+        messagingSenderId: "630180175743",
+        appId: "1:630180175743:web:6a39ea24129107690b444a",
+        measurementId: "G-2Q5RKJV1FC"
     }
-  
+
     const app = initializeApp(firebaseConfig);
     const storage = getStorage(app);
     const storageRef = ref(storage, 'files/');
+    const [fileNames, setFileNames] = React.useState<File[]>([]);
 
+    
+    
     const getFileNames = async () => {
         const res = await listAll(storageRef);
         const files = await Promise.all(
@@ -32,9 +34,17 @@ export const UploadsList: React.FC = () => {
                 const url = await getDownloadURL(item);
                 return { name: item.name, url };
             })
-        );
-        setFileNames(files);
+            );
+            setFileNames(files);
     };
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            getFileNames();
+        }, 5000); // Check every 5 seconds
+
+        return () => clearInterval(interval); // Clean up on component unmount
+    }, []);
 
     const getFileIcon = (fileName: string) => {
     const ext = fileName.split('.')[1];
