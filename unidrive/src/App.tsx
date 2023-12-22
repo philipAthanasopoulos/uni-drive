@@ -9,14 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="flex flex-col h-screen w-screen bg-gradient-to-r from-blue-500 to-white pt-20 pl-20">
-          <div className='flex flex-row justify-right items-center'>
-            <div className='flex flex-row justify-center items-center mr-10'>
-              <UploadSection />
-            </div>
-            <div className='flex flex-row justify-center items-center'>
-              <UploadsList />
-            </div>
+        <div className="flex flex-row h-screen w-screen bg-gradient-to-b from-cyan-500 to-white justify-center">
+          <div className='flex flex-row space-x-10 items-center'>
+            <UploadSection />
+            <UploadsList />
           </div>
         </div>
       </header>
