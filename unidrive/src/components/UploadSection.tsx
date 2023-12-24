@@ -4,21 +4,14 @@ import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { useState } from 'react';
 import { upload } from '@testing-library/user-event/dist/upload';
 import Dropzone from './Dropzone';
+import { FirebaseApp } from 'firebase/app';
 
+interface UploadSectionProps {
+  app: FirebaseApp;
+}
 
-export const UploadSection: React.FC = () => {
-  const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "unidrive-f8149.firebaseapp.com",
-    databaseURL: "https://unidrive-f8149-default-rtdb.firebaseio.com",
-    projectId: "unidrive-f8149",
-    storageBucket: "unidrive-f8149.appspot.com",
-    messagingSenderId: "630180175743",
-    appId: "1:630180175743:web:6a39ea24129107690b444a",
-    measurementId: "G-2Q5RKJV1FC"
-  }
+export const UploadSection: React.FC<UploadSectionProps> = ({ app }) => {
 
-  const app = initializeApp(firebaseConfig);
   console.log(app);
   const storage = getStorage(app);
   const storegeRef = ref(storage, 'files/');
@@ -37,7 +30,7 @@ export const UploadSection: React.FC = () => {
 
   const HandleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
-    if(files){
+    if(files) {
       setError(null);
       setFile(files[0]);
     }
