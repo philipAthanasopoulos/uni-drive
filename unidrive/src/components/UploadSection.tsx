@@ -24,7 +24,7 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ app }) => {
     if(success){
       setTimeout(() => {
         setSuccess(null);
-      }, 3000);
+      }, 4900);
     }
   }, [success]);
 
@@ -57,19 +57,21 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ app }) => {
 
  return (
   <div className='flex'>
+    { success && (
+      <div className="w-screen absolute top-10 left-0 flex justify-center">
+        <div className="animate-fadeIn">
+          <div className="transition ease-out duration-[250ms] p-2 bg-cyan-800 items-center leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+            <span className="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Uploaded</span>
+            <span className="font-semibold mr-2 text-left flex-auto">{file?.name} was uploaded</span>
+          </div>
+        </div>
+      </div>
+    )}
     <div className="flex flex-col items-center justify-center space-y-5">
       {error && (
         <div className="bg-red-100/75 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
           <p className="font-bold">No file selected</p>
           <p>Please select a file to upload 📂</p>
-        </div>
-      )}
-      { success && (
-        <div className=" text-center">
-          <div className="transition ease-out duration-[250ms] p-2 bg-cyan-800 items-center leading-none lg:rounded-full flex lg:inline-flex" role="alert">
-            <span className="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Uploaded</span>
-            <span className="font-semibold mr-2 text-left flex-auto">Your file was uploaded</span>
-          </div>
         </div>
       )}
       <Dropzone onDrop={HandleDrop} />
