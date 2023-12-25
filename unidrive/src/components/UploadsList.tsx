@@ -64,7 +64,7 @@ export const UploadsList: React.FC<UploadSectionProps> = ({ app }) => {
     }, []);
 
     return (
-        <div className='space-y-5'>
+        <div className='space-y-5 rounded bg-cyan-500 '>
             <h1 className='text-3xl font-bold'>Files</h1>
             <ul className='rounded '>
                 {fileNames.map((file, index) => (
