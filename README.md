@@ -2,7 +2,7 @@
 
 App can be found here : [React App (unidrive-f8149.web.app)](https://unidrive-f8149.web.app/)
 
-![1703270507709](image/README/1703270507709.png)
+![image](https://github.com/philipAthanasopoulos/uni-drive/assets/80889555/370916c3-8404-4346-8bfa-9b3189ac06e6)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
