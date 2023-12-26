@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { UploadSection } from './components/UploadSection';
 import { UploadsList } from './components/UploadsList';
 import './App.css';
 import { LoginCard } from './components/LoginCard';
 import { initializeApp } from "firebase/app";
+import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { LogoutButton } from './components/LogoutButton';
 
 function App() {
 
@@ -19,7 +21,18 @@ function App() {
   }
 
   const app = initializeApp(firebaseConfig);
-  const [loggedIn, setLoggedIn] = React.useState(false)
+  const auth = getAuth(app);
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, [auth]);
 
   return (
     <div className="App">
@@ -27,12 +40,17 @@ function App() {
         <h1 className='text-3xl font-bold'>UniDrive</h1>
         <div className="flex flex-row h-screen w-screen bg-gradient-to-b from-cyan-500 to-white justify-center">
           <div className='flex flex-row space-x-10 items-center'>
-            {!loggedIn && <LoginCard app={app} setLoggedIn={setLoggedIn} />}
-            {loggedIn && (
-              <div className='flex flex-row space-x-10 items-center'>
-                <UploadSection app={app} />
-                <UploadsList app={app} />
-              </div>
+            {!loading && (
+              <>
+                {!user && <LoginCard auth={auth} setUser={setUser}/>}
+                {user && (
+                  <div className='flex flex-row space-x-10 items-center'>
+                    <UploadSection app={app} />
+                    <UploadsList app={app} />
+                    <LogoutButton app={app} />
+                  </div>  
+                )}
+              </>
             )}
           </div>
         </div>
@@ -40,5 +58,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

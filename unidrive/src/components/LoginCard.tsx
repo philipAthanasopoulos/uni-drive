@@ -1,26 +1,30 @@
 import { FirebaseApp } from 'firebase/app';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import React from 'react';
+import { Auth, GoogleAuthProvider, User, browserLocalPersistence, getAuth, onAuthStateChanged, setPersistence, signInWithPopup } from 'firebase/auth';
+import React, { useEffect } from 'react';
 
 interface LoginCardProps {
-    app: FirebaseApp;
-    setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+    auth: Auth
+    setUser: React.Dispatch<React.SetStateAction<User | null>>
 }
 
-export const LoginCard: React.FC<LoginCardProps> = ({ app, setLoggedIn }) => {
+export const LoginCard: React.FC<LoginCardProps> = ({ auth, setUser }) => {
 
-    const auth = getAuth(app);
+    setPersistence(auth, browserLocalPersistence);
 
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
-
         try {
             const credential = await signInWithPopup(auth, provider);
-            setLoggedIn(true);
         } catch (error) {
             console.log(error);
         }
     };
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    }, [setUser,auth]);
 
     return(
         <div className = "transition duration-100 ease-out hover:-translate-y-2">
